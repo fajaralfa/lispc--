@@ -2,8 +2,9 @@
 
 #include <cstddef>
 #include <string>
+#include <vector>
 
-namespace Tokenizer {
+namespace tokenizer {
 
 enum TokenType {
   TOKEN_IDENTIFIER,
@@ -35,17 +36,13 @@ struct Token {
 };
 
 struct Tokenizer {
-  char *source;
-  Token *tokens;
-  size_t size;
-  size_t capacity;
+  std::string source;
+  std::vector<Token> tokens;
   size_t start;
   TokenPos pos;
 };
 
-void tokenize(Tokenizer *t);
-void tokenizer_init(Tokenizer *t, std::string *source);
-void tokenizer_free(Tokenizer *t);
-void tokenizer_debug(Tokenizer *t);
+void tokenize(Tokenizer &t);
+void printTokens(Tokenizer &t);
 
 }
