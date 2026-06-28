@@ -17,7 +17,7 @@ int main(void) {
       .pos = {1, 1},
   };
   tokenizer::tokenize(tokenizerData);
-  tokenizer::printTokens(tokenizerData);
+  tokenizer::print_tokens(tokenizerData);
 
   return 0;
 }

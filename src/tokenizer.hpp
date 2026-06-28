@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TOKENIZER_HPP
+#define TOKENIZER_HPP
 
 #include <cstddef>
 #include <string>
@@ -7,20 +8,11 @@
 namespace tokenizer {
 
 enum TokenType {
-  TOKEN_IDENTIFIER,
+  TOKEN_SYMBOL,
   TOKEN_NUMBER,
   TOKEN_LEFT_BRACE,
   TOKEN_RIGHT_BRACE,
-  TOKEN_DOUBLE_QUOTE,
-  TOKEN_PLUS,
-  TOKEN_MINUS,
-  TOKEN_STAR,
-  TOKEN_SLASH,
-  TOKEN_EQ,
-  TOKEN_LESSER,
-  TOKEN_LESSER_EQ,
-  TOKEN_GREATER,
-  TOKEN_GREATER_EQ,
+  TOKEN_STRING,
 };
 
 struct TokenPos {
@@ -43,6 +35,8 @@ struct Tokenizer {
 };
 
 void tokenize(Tokenizer &t);
-void printTokens(Tokenizer &t);
+void print_tokens(Tokenizer &t);
 
 }
+
+#endif
